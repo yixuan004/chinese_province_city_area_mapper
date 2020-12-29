@@ -85,7 +85,9 @@ def _init_data(stop_key="([省市]|特别行政区|自治区)$") -> (dict, Match
     return ad_map, matcher
 
 
-ad_2_addr_dict, matcher = _init_data()
+ad_2_addr_dict, matcher1 = _init_data()
+ad_2_addr_dict, matcher = _init_data(
+    stop_key="([省市县区]|特别行政区|自治区)$")
 
 
 def transform(location_strs, index=None, pos_sensitive=False):

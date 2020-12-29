@@ -4,7 +4,7 @@ from pathlib import Path
 from setuptools import setup
 from setuptools.command.test import test as TestCommand
 
-import cpca
+import cpca2
 
 
 class PyTest(TestCommand):
@@ -38,8 +38,8 @@ requires = [
 
 
 setup(
-    name='cpca',
-    version=cpca.__version__,
+    name='cpca2',
+    version=cpca2.__version__,
     description='Chinese Province, City and Area Recognition Utilities',
     long_description=README.read_text(),
     author='DQinYuan',
@@ -59,10 +59,10 @@ setup(
         'Simplified Chinese,'
         'Chinese geographic information,'
         'Chinese province city and area recognition and map'),
-    packages=['cpca', 'cpca.resources'],
+    packages=['cpca2', 'cpca2.resources'],
     # 通过python setup.py test可以执行所有的单元测试
     cmdclass={'test': PyTest},
-    package_dir={'cpca': 'cpca', 'cpca.resources': 'cpca/resources'},
+    package_dir={'cpca2': 'cpca2', 'cpca2.resources': 'cpca2/resources'},
     package_data={'': ['*.csv']},
     include_package_data=True,
     install_requires=requires,
